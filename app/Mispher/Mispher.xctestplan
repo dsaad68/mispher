@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "C383FF64-8D59-45EC-B27D-8133B5EDF605",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Mispher.xcodeproj",
+      "identifier" : "7119357B2FD1C055008838D3",
+      "name" : "Mispher"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:Mispher.xcodeproj",
+        "identifier" : "711935882FD1C056008838D3",
+        "name" : "MispherTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Mispher.xcodeproj",
+        "identifier" : "711935922FD1C056008838D3",
+        "name" : "MispherUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

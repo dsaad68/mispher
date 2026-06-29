@@ -1,0 +1,83 @@
+name: release
+
+# Manual release: builds the Mispher app on a self-hosted Apple Silicon runner, signs it with the
+# Developer ID cert, notarizes it, wraps it in a notarized + stapled Mispher.dmg, and attaches that DMG
+# to a GitHub Release (notes pulled from CHANGELOG.md).
+#
+# Trigger from the source monorepo with `just release-app`, or here from the Actions tab ("Run
+# workflow"). The version defaults to the app's MARKETING_VERSION in the checked-out source.
+#
+# Prerequisites (one-time):
+#   * A self-hosted runner registered on this repo (Settings > Actions > Runners), running as the macOS
+#     user whose login keychain holds the "Developer ID Application: Daniel Saad (2WW2TG6GQG)" cert and
+#     the "mispher-notary" notarytool credential profile. The login keychain must be unlocked
+#     (xcrun notarytool/codesign read from it non-interactively).
+#   * Xcode 26+ active so xcodebuild emits MLX's Metal shader library next to the binary.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version, e.g. 1.0 (defaults to the app's MARKETING_VERSION)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: [self-hosted, macOS, ARM64]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve version
+        id: ver
+        run: |
+          set -euo pipefail
+          v="${{ inputs.version }}"
+          if [ -z "$v" ]; then
+            v="$(grep -m1 -oE 'MARKETING_VERSION = [0-9][0-9.]*' \
+                  app/Mispher/Mispher.xcodeproj/project.pbxproj | grep -oE '[0-9][0-9.]*')"
+          fi
+          [ -n "$v" ] || { echo "::error::could not resolve version"; exit 1; }
+          echo "version=$v" >> "$GITHUB_OUTPUT"
+          echo "Releasing Mispher $v"
+
+      - name: Build, sign, notarize, and package the DMG
+        run: |
+          set -euo pipefail
+          # Produces build/Mispher.dmg (signed with Developer ID, notarized + stapled). Uses the
+          # "mispher-notary" keychain profile and the Developer ID cert from the runner's login keychain.
+          scripts/package-mispher.sh
+          test -f build/Mispher.dmg || { echo "::error::build/Mispher.dmg was not produced"; exit 1; }
+
+      - name: Extract changelog notes
+        id: notes
+        run: |
+          set -euo pipefail
+          v="${{ steps.ver.outputs.version }}"
+          awk -v ver="$v" '
+            $0 ~ ("^## \\[" ver "\\]") { grab = 1; next }
+            grab && /^## \[/ { exit }
+            grab { print }
+          ' CHANGELOG.md > release-notes.md 2>/dev/null || true
+          if [ ! -s release-notes.md ]; then
+            printf 'Mispher %s\n' "$v" > release-notes.md
+          fi
+          echo "----- release notes -----"; cat release-notes.md
+
+      - name: Create / update GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          v="${{ steps.ver.outputs.version }}"
+          if gh release view "$v" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$v" --repo "$GITHUB_REPOSITORY" --title "$v" --notes-file release-notes.md
+            gh release upload "$v" build/Mispher.dmg --repo "$GITHUB_REPOSITORY" --clobber
+          else
+            gh release create "$v" build/Mispher.dmg --repo "$GITHUB_REPOSITORY" \
+              --title "$v" --notes-file release-notes.md --target main
+          fi
+          echo "Release $v ready: https://github.com/$GITHUB_REPOSITORY/releases/tag/$v"
