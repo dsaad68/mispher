@@ -1,0 +1,51 @@
+name: pages
+
+# Deploy the Mispher landing page (a single self-contained index.html + og-image.png) to GitHub Pages.
+# Only the two landing-page files are published, so the app source at the repo root is never served.
+#
+# One-time setup (after the first publish of this mirror): mispher repo > Settings > Pages >
+# Source = "GitHub Actions". Free because the repo is public.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - og-image.png
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One concurrent deploy; let an in-progress run finish rather than cancelling a live publish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Stage the landing page
+        run: |
+          set -euo pipefail
+          mkdir _site
+          cp index.html _site/
+          cp og-image.png _site/
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deploy
+        uses: actions/deploy-pages@v4

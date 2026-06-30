@@ -1,0 +1,762 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 100;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C0DE0000000000000000B006 /* MLXLLM in Frameworks */ = {isa = PBXBuildFile; productRef = C0DE0000000000000000B002 /* MLXLLM */; };
+		C0DE0000000000000000B007 /* MLXVLM in Frameworks */ = {isa = PBXBuildFile; productRef = C0DE0000000000000000B003 /* MLXVLM */; };
+		C0DE0000000000000000B008 /* MLXLMCommon in Frameworks */ = {isa = PBXBuildFile; productRef = C0DE0000000000000000B004 /* MLXLMCommon */; };
+		C0DE0000000000000000B009 /* MLXHuggingFace in Frameworks */ = {isa = PBXBuildFile; productRef = C0DE0000000000000000B005 /* MLXHuggingFace */; };
+		C0DE0000000000000000B00E /* HuggingFace in Frameworks */ = {isa = PBXBuildFile; productRef = C0DE0000000000000000B00C /* HuggingFace */; };
+		C0DE0000000000000000B00F /* Tokenizers in Frameworks */ = {isa = PBXBuildFile; productRef = C0DE0000000000000000B00D /* Tokenizers */; };
+		C0DE0000000000000000B012 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = C0DE0000000000000000B011 /* MarkdownUI */; };
+		C0DE0000000000000000B013 /* MCP in Frameworks */ = {isa = PBXBuildFile; productRef = C0DE0000000000000000B014 /* MCP */; };
+		C0DE0000000000000000B022 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = C0DE0000000000000000B021 /* Collections */; };
+		C0DE0000000000000000C001 /* DeepAgents in Frameworks */ = {isa = PBXBuildFile; productRef = C0DE0000000000000000C002 /* DeepAgents */; };
+		C0DE0000000000000000C006 /* DeepAgentsMLX in Frameworks */ = {isa = PBXBuildFile; productRef = C0DE0000000000000000C004 /* DeepAgentsMLX */; };
+		C0DE0000000000000000C007 /* DeepAgentsMacTools in Frameworks */ = {isa = PBXBuildFile; productRef = C0DE0000000000000000C005 /* DeepAgentsMacTools */; };
+		FADE0000000000000000A003 /* FluidAudio in Frameworks */ = {isa = PBXBuildFile; productRef = FADE0000000000000000A002 /* FluidAudio */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7119358A2FD1C056008838D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 711935742FD1C055008838D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7119357B2FD1C055008838D3;
+			remoteInfo = Mispher;
+		};
+		711935942FD1C056008838D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 711935742FD1C055008838D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7119357B2FD1C055008838D3;
+			remoteInfo = Mispher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7119357C2FD1C055008838D3 /* Mispher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mispher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		711935892FD1C056008838D3 /* MispherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MispherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		711935932FD1C056008838D3 /* MispherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MispherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71AD44EA2FD6A91D00750928 /* Mispher.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Mispher.xctestplan; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		7119357E2FD1C055008838D3 /* Mispher */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Mispher;
+			sourceTree = "<group>";
+		};
+		7119358C2FD1C056008838D3 /* MispherTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MispherTests;
+			sourceTree = "<group>";
+		};
+		711935962FD1C056008838D3 /* MispherUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MispherUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		711935792FD1C055008838D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+				FADE0000000000000000A003 /* FluidAudio in Frameworks */,
+				C0DE0000000000000000B006 /* MLXLLM in Frameworks */,
+				C0DE0000000000000000B007 /* MLXVLM in Frameworks */,
+				C0DE0000000000000000B008 /* MLXLMCommon in Frameworks */,
+				C0DE0000000000000000B009 /* MLXHuggingFace in Frameworks */,
+				C0DE0000000000000000B00E /* HuggingFace in Frameworks */,
+				C0DE0000000000000000B00F /* Tokenizers in Frameworks */,
+				C0DE0000000000000000B012 /* MarkdownUI in Frameworks */,
+				C0DE0000000000000000B013 /* MCP in Frameworks */,
+				C0DE0000000000000000B022 /* Collections in Frameworks */,
+				C0DE0000000000000000C001 /* DeepAgents in Frameworks */,
+				C0DE0000000000000000C006 /* DeepAgentsMLX in Frameworks */,
+				C0DE0000000000000000C007 /* DeepAgentsMacTools in Frameworks */,
+			);
+		};
+		711935862FD1C056008838D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		711935902FD1C056008838D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		711935732FD1C055008838D3 = {
+			isa = PBXGroup;
+			children = (
+				71AD44EA2FD6A91D00750928 /* Mispher.xctestplan */,
+				7119357E2FD1C055008838D3 /* Mispher */,
+				7119358C2FD1C056008838D3 /* MispherTests */,
+				711935962FD1C056008838D3 /* MispherUITests */,
+				7119357D2FD1C055008838D3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7119357D2FD1C055008838D3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7119357C2FD1C055008838D3 /* Mispher.app */,
+				711935892FD1C056008838D3 /* MispherTests.xctest */,
+				711935932FD1C056008838D3 /* MispherUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7119357B2FD1C055008838D3 /* Mispher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7119359D2FD1C056008838D3 /* Build configuration list for PBXNativeTarget "Mispher" */;
+			buildPhases = (
+				711935782FD1C055008838D3 /* Sources */,
+				711935792FD1C055008838D3 /* Frameworks */,
+				7119357A2FD1C055008838D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				7119357E2FD1C055008838D3 /* Mispher */,
+			);
+			name = Mispher;
+			packageProductDependencies = (
+				FADE0000000000000000A002 /* FluidAudio */,
+				C0DE0000000000000000B002 /* MLXLLM */,
+				C0DE0000000000000000B003 /* MLXVLM */,
+				C0DE0000000000000000B004 /* MLXLMCommon */,
+				C0DE0000000000000000B005 /* MLXHuggingFace */,
+				C0DE0000000000000000B00C /* HuggingFace */,
+				C0DE0000000000000000B00D /* Tokenizers */,
+				C0DE0000000000000000B011 /* MarkdownUI */,
+				C0DE0000000000000000B014 /* MCP */,
+				C0DE0000000000000000B021 /* Collections */,
+				C0DE0000000000000000C002 /* DeepAgents */,
+				C0DE0000000000000000C004 /* DeepAgentsMLX */,
+				C0DE0000000000000000C005 /* DeepAgentsMacTools */,
+			);
+			productName = Mispher;
+			productReference = 7119357C2FD1C055008838D3 /* Mispher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		711935882FD1C056008838D3 /* MispherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 711935A02FD1C056008838D3 /* Build configuration list for PBXNativeTarget "MispherTests" */;
+			buildPhases = (
+				711935852FD1C056008838D3 /* Sources */,
+				711935862FD1C056008838D3 /* Frameworks */,
+				711935872FD1C056008838D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7119358B2FD1C056008838D3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7119358C2FD1C056008838D3 /* MispherTests */,
+			);
+			name = MispherTests;
+			productName = MispherTests;
+			productReference = 711935892FD1C056008838D3 /* MispherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		711935922FD1C056008838D3 /* MispherUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 711935A32FD1C056008838D3 /* Build configuration list for PBXNativeTarget "MispherUITests" */;
+			buildPhases = (
+				7119358F2FD1C056008838D3 /* Sources */,
+				711935902FD1C056008838D3 /* Frameworks */,
+				711935912FD1C056008838D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				711935952FD1C056008838D3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				711935962FD1C056008838D3 /* MispherUITests */,
+			);
+			name = MispherUITests;
+			productName = MispherUITests;
+			productReference = 711935932FD1C056008838D3 /* MispherUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		711935742FD1C055008838D3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2650;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					7119357B2FD1C055008838D3 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+					711935882FD1C056008838D3 = {
+						CreatedOnToolsVersion = 26.5;
+						TestTargetID = 7119357B2FD1C055008838D3;
+					};
+					711935922FD1C056008838D3 = {
+						CreatedOnToolsVersion = 26.5;
+						TestTargetID = 7119357B2FD1C055008838D3;
+					};
+				};
+			};
+			buildConfigurationList = 711935772FD1C055008838D3 /* Build configuration list for PBXProject "Mispher" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 711935732FD1C055008838D3;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				FADE0000000000000000A001 /* XCRemoteSwiftPackageReference "FluidAudio" */,
+				C0DE0000000000000000B001 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */,
+				C0DE0000000000000000B00A /* XCRemoteSwiftPackageReference "swift-huggingface" */,
+				C0DE0000000000000000B00B /* XCRemoteSwiftPackageReference "swift-transformers" */,
+				C0DE0000000000000000B010 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				C0DE0000000000000000B015 /* XCRemoteSwiftPackageReference "swift-sdk" */,
+				C0DE0000000000000000B020 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				C0DE0000000000000000C003 /* XCRemoteSwiftPackageReference "deepagents-swift" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7119357D2FD1C055008838D3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7119357B2FD1C055008838D3 /* Mispher */,
+				711935882FD1C056008838D3 /* MispherTests */,
+				711935922FD1C056008838D3 /* MispherUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7119357A2FD1C055008838D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		711935872FD1C056008838D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		711935912FD1C056008838D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		711935782FD1C055008838D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		711935852FD1C056008838D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		7119358F2FD1C056008838D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7119358B2FD1C056008838D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7119357B2FD1C055008838D3 /* Mispher */;
+			targetProxy = 7119358A2FD1C056008838D3 /* PBXContainerItemProxy */;
+		};
+		711935952FD1C056008838D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7119357B2FD1C055008838D3 /* Mispher */;
+			targetProxy = 711935942FD1C056008838D3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7119359B2FD1C056008838D3 /* Debug configuration for PBXProject "Mispher" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 2WW2TG6GQG;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7119359C2FD1C056008838D3 /* Release configuration for PBXProject "Mispher" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 2WW2TG6GQG;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		7119359E2FD1C056008838D3 /* Debug configuration for PBXNativeTarget "Mispher" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 2WW2TG6GQG;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "Mispher uses Apple Events to read and update your Apple Notes when you ask it to.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Mispher uses the microphone to transcribe your speech in real time.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.2;
+				CODE_SIGN_ENTITLEMENTS = Mispher/Mispher.entitlements;
+				PRODUCT_BUNDLE_IDENTIFIER = engineer.verybad.Mispher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		7119359F2FD1C056008838D3 /* Release configuration for PBXNativeTarget "Mispher" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 2WW2TG6GQG;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "Mispher uses Apple Events to read and update your Apple Notes when you ask it to.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Mispher uses the microphone to transcribe your speech in real time.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.2;
+				CODE_SIGN_ENTITLEMENTS = Mispher/Mispher.entitlements;
+				PRODUCT_BUNDLE_IDENTIFIER = engineer.verybad.Mispher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		711935A12FD1C056008838D3 /* Debug configuration for PBXNativeTarget "MispherTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = verybadcompany.MispherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mispher.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mispher";
+			};
+			name = Debug;
+		};
+		711935A22FD1C056008838D3 /* Release configuration for PBXNativeTarget "MispherTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = verybadcompany.MispherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mispher.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mispher";
+			};
+			name = Release;
+		};
+		711935A42FD1C056008838D3 /* Debug configuration for PBXNativeTarget "MispherUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = verybadcompany.MispherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TEST_TARGET_NAME = Mispher;
+			};
+			name = Debug;
+		};
+		711935A52FD1C056008838D3 /* Release configuration for PBXNativeTarget "MispherUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = verybadcompany.MispherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TEST_TARGET_NAME = Mispher;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		711935772FD1C055008838D3 /* Build configuration list for PBXProject "Mispher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7119359B2FD1C056008838D3 /* Debug configuration for PBXProject "Mispher" */,
+				7119359C2FD1C056008838D3 /* Release configuration for PBXProject "Mispher" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		7119359D2FD1C056008838D3 /* Build configuration list for PBXNativeTarget "Mispher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7119359E2FD1C056008838D3 /* Debug configuration for PBXNativeTarget "Mispher" */,
+				7119359F2FD1C056008838D3 /* Release configuration for PBXNativeTarget "Mispher" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		711935A02FD1C056008838D3 /* Build configuration list for PBXNativeTarget "MispherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				711935A12FD1C056008838D3 /* Debug configuration for PBXNativeTarget "MispherTests" */,
+				711935A22FD1C056008838D3 /* Release configuration for PBXNativeTarget "MispherTests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		711935A32FD1C056008838D3 /* Build configuration list for PBXNativeTarget "MispherUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				711935A42FD1C056008838D3 /* Debug configuration for PBXNativeTarget "MispherUITests" */,
+				711935A52FD1C056008838D3 /* Release configuration for PBXNativeTarget "MispherUITests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		C0DE0000000000000000C003 /* XCRemoteSwiftPackageReference "deepagents-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dsaad68/deepagents-swift.git"; requirement = { kind = exactVersion; version = "0.2.4"; };
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C0DE0000000000000000B001 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ml-explore/mlx-swift-lm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.31.3;
+			};
+		};
+		C0DE0000000000000000B00A /* XCRemoteSwiftPackageReference "swift-huggingface" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huggingface/swift-huggingface";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+			traits = (
+				Xet,
+			);
+		};
+		C0DE0000000000000000B00B /* XCRemoteSwiftPackageReference "swift-transformers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huggingface/swift-transformers";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+			traits = (
+				Xet,
+			);
+		};
+		C0DE0000000000000000B010 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		C0DE0000000000000000B015 /* XCRemoteSwiftPackageReference "swift-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/modelcontextprotocol/swift-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.11.0;
+			};
+		};
+		C0DE0000000000000000B020 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+		FADE0000000000000000A001 /* XCRemoteSwiftPackageReference "FluidAudio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/FluidInference/FluidAudio.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.15.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C0DE0000000000000000B002 /* MLXLLM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0DE0000000000000000B001 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */;
+			productName = MLXLLM;
+		};
+		C0DE0000000000000000B003 /* MLXVLM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0DE0000000000000000B001 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */;
+			productName = MLXVLM;
+		};
+		C0DE0000000000000000B004 /* MLXLMCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0DE0000000000000000B001 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */;
+			productName = MLXLMCommon;
+		};
+		C0DE0000000000000000B005 /* MLXHuggingFace */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0DE0000000000000000B001 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */;
+			productName = MLXHuggingFace;
+		};
+		C0DE0000000000000000B00C /* HuggingFace */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0DE0000000000000000B00A /* XCRemoteSwiftPackageReference "swift-huggingface" */;
+			productName = HuggingFace;
+		};
+		C0DE0000000000000000B00D /* Tokenizers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0DE0000000000000000B00B /* XCRemoteSwiftPackageReference "swift-transformers" */;
+			productName = Tokenizers;
+		};
+		C0DE0000000000000000B011 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0DE0000000000000000B010 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
+		C0DE0000000000000000B014 /* MCP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0DE0000000000000000B015 /* XCRemoteSwiftPackageReference "swift-sdk" */;
+			productName = MCP;
+		};
+		C0DE0000000000000000B021 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0DE0000000000000000B020 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		C0DE0000000000000000C002 /* DeepAgents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0DE0000000000000000C003 /* XCRemoteSwiftPackageReference "deepagents-swift" */;
+			productName = DeepAgents;
+		};
+		C0DE0000000000000000C004 /* DeepAgentsMLX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0DE0000000000000000C003 /* XCRemoteSwiftPackageReference "deepagents-swift" */;
+			productName = DeepAgentsMLX;
+		};
+		C0DE0000000000000000C005 /* DeepAgentsMacTools */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0DE0000000000000000C003 /* XCRemoteSwiftPackageReference "deepagents-swift" */;
+			productName = DeepAgentsMacTools;
+		};
+		FADE0000000000000000A002 /* FluidAudio */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FADE0000000000000000A001 /* XCRemoteSwiftPackageReference "FluidAudio" */;
+			productName = FluidAudio;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 711935742FD1C055008838D3 /* Project object */;
+}
