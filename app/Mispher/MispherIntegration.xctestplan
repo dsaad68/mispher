@@ -1,0 +1,44 @@
+{
+  "configurations" : [
+    {
+      "id" : "B2C3D4E5-F6A7-8901-BCDE-F12345678901",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Mispher.xcodeproj",
+      "identifier" : "7119357B2FD1C055008838D3",
+      "name" : "Mispher"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : false,
+      "selectedTests" : [
+        "AgentIntegrationTests",
+        "AgentLoopConvergenceTests",
+        "AgentTaskIntegrationTests",
+        "AgentTimelineBuilderTests",
+        "AskAgentTests",
+        "CleanupAgentTests",
+        "ConversationStoreTests",
+        "DeepAgentTests",
+        "ReconstructTranscriptTests",
+        "ToolCallParsingIntegrationTests",
+        "TranslationAgentTests",
+        "VisionAgentTests"
+      ],
+      "target" : {
+        "containerPath" : "container:Mispher.xcodeproj",
+        "identifier" : "711935882FD1C056008838D3",
+        "name" : "MispherTests"
+      }
+    }
+  ],
+  "version" : 1
+}
