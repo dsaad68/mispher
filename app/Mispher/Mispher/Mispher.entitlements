@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Hardened Runtime resource access. The app is notarized with Hardened Runtime enabled, which
+	     gates these TCC-protected resources behind matching entitlements: without them the system
+	     blocks access even after the user grants permission (the mic prompt may not even appear). -->
+	<key>com.apple.security.device.audio-input</key>
+	<true/>
+	<!-- Lets the Ask agent drive Apple Notes via Apple Events (osascript). -->
+	<key>com.apple.security.automation.apple-events</key>
+	<true/>
+</dict>
+</plist>

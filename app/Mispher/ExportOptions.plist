@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Export options for a Developer ID (outside-the-App-Store) build of Mispher.
+     `xcodebuild -exportArchive` reads this to sign the exported .app (and all embedded
+     frameworks / resource bundles) with the "Developer ID Application" certificate. -->
+<plist version="1.0">
+<dict>
+	<key>method</key>
+	<string>developer-id</string>
+	<key>teamID</key>
+	<string>2WW2TG6GQG</string>
+	<key>signingStyle</key>
+	<string>automatic</string>
+</dict>
+</plist>
