@@ -1,0 +1,120 @@
+name: release
+
+# Manual release: builds the Mispher app on a self-hosted Apple Silicon runner, signs it with the
+# Developer ID cert, notarizes it, wraps it in a notarized + stapled Mispher.dmg, attaches that DMG
+# to a GitHub Release (notes pulled from CHANGELOG.md), and bumps the Homebrew cask in
+# dsaad68/homebrew-tap (brew install --cask dsaad68/tap/mispher).
+#
+# Trigger from the source monorepo with `just release-app`, or here from the Actions tab ("Run
+# workflow"). The version defaults to the app's MARKETING_VERSION in the checked-out source.
+#
+# Prerequisites (one-time):
+#   * A self-hosted runner registered on this repo (Settings > Actions > Runners), running as the macOS
+#     user whose login keychain holds the "Developer ID Application: Daniel Saad (2WW2TG6GQG)" cert and
+#     the "mispher-notary" notarytool credential profile. The login keychain must be unlocked
+#     (xcrun notarytool/codesign read from it non-interactively).
+#   * Xcode 26+ active so xcodebuild emits MLX's Metal shader library next to the binary.
+#   * HOMEBREW_TAP_TOKEN secret (a fine-grained PAT with contents:write on dsaad68/homebrew-tap) so the
+#     cask step can push. If unset, the release still cuts the DMG and the cask step is skipped.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version, e.g. 1.0 (defaults to the app's MARKETING_VERSION)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: [self-hosted, macOS, ARM64]
+    env:
+      # Empty when the secret is unset, which the cask step keys off of (see its `if:`).
+      TAP_TOKEN: ${{ secrets.HOMEBREW_TAP_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve version
+        id: ver
+        run: |
+          set -euo pipefail
+          v="${{ inputs.version }}"
+          if [ -z "$v" ]; then
+            v="$(grep -m1 -oE 'MARKETING_VERSION = [0-9][0-9.]*' \
+                  app/Mispher/Mispher.xcodeproj/project.pbxproj | grep -oE '[0-9][0-9.]*')"
+          fi
+          [ -n "$v" ] || { echo "::error::could not resolve version"; exit 1; }
+          echo "version=$v" >> "$GITHUB_OUTPUT"
+          echo "Releasing Mispher $v"
+
+      - name: Build, sign, notarize, and package the DMG
+        run: |
+          set -euo pipefail
+          # Produces build/Mispher.dmg (signed with Developer ID, notarized + stapled). Uses the
+          # "mispher-notary" keychain profile and the Developer ID cert from the runner's login keychain.
+          scripts/package-mispher.sh
+          test -f build/Mispher.dmg || { echo "::error::build/Mispher.dmg was not produced"; exit 1; }
+
+      - name: Extract changelog notes
+        id: notes
+        run: |
+          set -euo pipefail
+          v="${{ steps.ver.outputs.version }}"
+          awk -v ver="$v" '
+            $0 ~ ("^## \\[" ver "\\]") { grab = 1; next }
+            grab && /^## \[/ { exit }
+            grab { print }
+          ' CHANGELOG.md > release-notes.md 2>/dev/null || true
+          if [ ! -s release-notes.md ]; then
+            printf 'Mispher %s\n' "$v" > release-notes.md
+          fi
+          echo "----- release notes -----"; cat release-notes.md
+
+      - name: Create / update GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          v="${{ steps.ver.outputs.version }}"
+          if gh release view "$v" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$v" --repo "$GITHUB_REPOSITORY" --title "$v" --notes-file release-notes.md
+            gh release upload "$v" build/Mispher.dmg --repo "$GITHUB_REPOSITORY" --clobber
+          else
+            gh release create "$v" build/Mispher.dmg --repo "$GITHUB_REPOSITORY" \
+              --title "$v" --notes-file release-notes.md --target main
+          fi
+          echo "Release $v ready: https://github.com/$GITHUB_REPOSITORY/releases/tag/$v"
+
+      - name: Update Homebrew cask
+        if: ${{ env.TAP_TOKEN != '' }}
+        run: |
+          set -euo pipefail
+          v="${{ steps.ver.outputs.version }}"
+          # The DMG asset name is the unversioned Mispher.dmg, but it lives under the versioned release
+          # tag -- so the URL is version-locked and the sha256 stays stable per release.
+          sha="$(shasum -a 256 build/Mispher.dmg | awk '{print $1}')"
+          url="https://github.com/$GITHUB_REPOSITORY/releases/download/$v/Mispher.dmg"
+          tmp="$(mktemp -d)"
+          git clone --depth 1 "https://x-access-token:${TAP_TOKEN}@github.com/dsaad68/homebrew-tap.git" "$tmp"
+          mkdir -p "$tmp/Casks"
+          sed -e "s|__VERSION__|$v|g" -e "s|__URL__|$url|g" -e "s|__SHA256__|$sha|g" \
+            .github/homebrew/mispher.rb > "$tmp/Casks/mispher.rb"
+          cd "$tmp"
+          git config user.name "mispher-release-bot"
+          git config user.email "mispher-release-bot@users.noreply.github.com"
+          # Stage first, then check the staged diff: `git diff` alone ignores a brand-new
+          # (untracked) cask, so the first release would otherwise skip the commit.
+          git add Casks/mispher.rb
+          if git diff --cached --quiet; then
+            echo "tap already up to date for $v"; exit 0
+          fi
+          git commit -m "mispher $v"
+          git push
+          echo "Cask updated: brew install --cask dsaad68/tap/mispher"
+
+      - name: Tap step skipped
+        if: ${{ env.TAP_TOKEN == '' }}
+        run: echo "::notice::HOMEBREW_TAP_TOKEN not set - skipped the cask update. Release DMG is still published."
